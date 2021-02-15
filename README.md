@@ -17,11 +17,11 @@ We have tried to organise the code in a thoughtful way
   - **_Codice_analisi_funzionale.RData_** the base of our work: the data!
 - **code** contains:
   - **_core.R_** - the heart of our code, with the calls to all the external functions
-  
   - **_Codice_analisi_funzionale.R_** we build up our dataset from given data (its output is stored in **data**)
   - **_Functional.R_** - where we worked on functional representation of the data
   - **_fPCA.R_** - some preprocessing work
-  - **_graphics.R_** 
+  - **_graphics.R_**
+
 - **samplers** contains:
   - **_niw.RData_**
   - **_nor.RData_**
