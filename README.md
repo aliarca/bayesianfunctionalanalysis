@@ -6,15 +6,14 @@ Code and stuff from our project for Bayesian functional ANOVA
 If you want to be sure of not missing anything, here there is a list of all the packages we have used
 ```r
 needed_packages  <- c("fda.usc","fda","fields","LaplacesDemon","matlab","mvtnorm", "Rmpfr", "LearnBayes")
-new_packages  <- needed_packages[!(needed_packages %in%installed.packages ()[, "Package"])] if (length(new_packages))
-install.packages(new_packages)
-lapply(needed_packages , require , character.only = TRUE)}
+new_packages  <- needed_packages[!(needed_packages %in%installed.packages ()[, "Package"])]
+if (length(new_packages))install.packages(new_packages)
+lapply(needed_packages , require , character.only = TRUE)
 ```
 
 ## structure: folders and files
 We have tried to organise the code in a thoughtful way
 - **data** contains:
-  - **_dati.csv_** a table with useful health and rehab indicators
   - **_Codice_analisi_funzionale.RData_** the base of our work: the data!
 - **code** contains:
   - **_core.R_** - the heart of our code, with the calls to all the external functions
