@@ -50,7 +50,6 @@ for (n_sign in 1:8){
   print(n_sign)
   ###########################################################################
   ################################ THE DATA #################################
-  
   # number of patients with the specified signal 
   n_tot <- sum(check_signal[,n_sign])
   indexes <- which(check_signal[,n_sign]==1)
@@ -107,9 +106,9 @@ for (n_sign in 1:8){
   
   niter <- 5000 # number of Mc samples I run from my posterior, which equals the niter of the Gibbs
   print("MU")
-  niw <- sampling_mean_niw(niter, betas, beta_mean, b_t, data_L.fd, L, T, n)
-  MU = niw$MU
-  k0 <- niw$k0
+  MU <- sampling_mean_niw(niter, betas, beta_mean, b_t, data_L.fd, L, T, n)
+  
+ 
   
   # # '- - - Normal - - -' ####
   # # A DIFERENT POSSIBLE STRATEGY OF MODELLING THE MEAN TERM:
@@ -227,9 +226,7 @@ for (n_sign in 1:8){
   
   # '- - - NIW - - -' ####
   print("MU1")
-  niw1 <- sampling_mean_niw(niter, betas1, beta_mean1, b_t, data_L.fd, L, T, n1)
-  k01 <- niw1$k0
-  MU1 <- niw1$MU
+  MU1 <- sampling_mean_niw(niter, betas1, beta_mean1, b_t, data_L.fd, L, T, n1)
   
   # # '- - - Normal - - -' ####
   # print("MU1_norm")
@@ -314,10 +311,8 @@ for (n_sign in 1:8){
   
   # '- - - NIW - - -' ####
   print("MU2")
-  niw2 <- sampling_mean_niw(niter, betas2, beta_mean2, b_t, data_L.fd, L, T, n2)
-  k02 <- niw2$k0
-  MU2 <- niw2$MU
-  
+  MU2 <- sampling_mean_niw(niter, betas2, beta_mean2, b_t, data_L.fd, L, T, n2)
+
   # # '- - - Normal - - -' ####
   # print("MU2_norm")
   # MU2_norm <- sampling_mean_normal(niter, betas2, beta_mean2, b_t, data_L.fd, L, T, n2)
