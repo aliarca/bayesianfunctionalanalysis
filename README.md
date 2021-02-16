@@ -1,9 +1,8 @@
 # Bayesian functional analysis
 ## Study of EEGs from brain responses in coma patients
-.
-.
-.
-.
+The aim of this project is to study the electrical brain waves of patients in a state of coma. In particular, an external electrical stimulus is applied to the patient and then the electrical brain response is recorded. These responses are here studied and then compared to the actual recovery of the patients, in order to verify whether there are significant differences in the curves of patients who had a good recovery and in the curves of patients with a bad recovery. 
+To do so, we followed a Baeysian Functional Anova approach.
+
 
 ## required packages
 If you want to be sure of not missing anything, here there is a list of all the packages we have used
