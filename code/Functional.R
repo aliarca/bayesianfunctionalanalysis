@@ -1,12 +1,12 @@
-library(fda.usc)
-library(fda)
-library(fields)
+needed_packages  <- c("fda.usc","fda","fields")
+new_packages  <- needed_packages[!(needed_packages %in%installed.packages ()[, "Package"])]
+if (length(new_packages))  install.packages(new_packages)
+lapply(needed_packages , require , character.only = TRUE)
 
-#save.image("WS_functional.Rdata")
-#load("WS_functional.Rdata")
-load("Codice_analisi_funzionale.RData")
+load("data/Codice_analisi_funzionale.RData")
 
 #Results are related to signal 3, but they are very similar to each other
+#just change n_sign to try the others
 n_sign = 3
 plot.fdata(f.data[[n_sign]], main = n_sign)
 

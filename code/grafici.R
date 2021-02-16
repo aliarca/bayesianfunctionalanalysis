@@ -1,4 +1,4 @@
-load("Codice_analisi_funzionale.RData")
+load("data/Codice_analisi_funzionale.RData")
 a = rep(1,8) #all signals present
 # Ordine: ausxSL  audxSL  frsxSL  frdxSL ausxML  audxML  frsxML  frdxML
 a6 = c(1,1,1,1,0,1,0,1) #missing au&fr sxML

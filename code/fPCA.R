@@ -1,10 +1,9 @@
-library(fda.usc)
-library(fda)
-library(fields)
-
+needed_packages  <- c("fda.usc","fda","fields")
+new_packages  <- needed_packages[!(needed_packages %in%installed.packages ()[, "Package"])]
+if (length(new_packages))  install.packages(new_packages)
+lapply(needed_packages , require , character.only = TRUE)
 
 load("data/Codice_analisi_funzionale.RData")
-#load("WS_fPCA.Rdata")
 
 ########### patients ok note: only 7 over 26 
 # Building the 1-0  matrix to keep track of patinets and signals
