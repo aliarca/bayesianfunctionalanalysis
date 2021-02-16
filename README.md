@@ -40,12 +40,12 @@ We assume our signals to be i.i.d samples from a
 In this overview, we want to take you along the discoveries we made, to finally lead you to the result.
 First of all, a glimpe over a couple of the signals we studied
 * signal 5 (Central SX Medium Latency) for all patients
-<img src="https://https://github.com/aliarca/bayesianfunctionalanalysis/edit/main/images/all_5.png" width="50%" height="50%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/all_5.png" width="50%" height="50%">
 * signal 4 (Fontal DX Short Latency) for all patients
 <img src="https://https://github.com/aliarca/bayesianfunctionalanalysis/edit/main/images/all_4.png" width="50%" height="50%">
 As you can see, some signals are more tidy than others, which insteas vary much more.
 
-
+https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/gose2_5.png
 
 ## Acknowledgments
 
