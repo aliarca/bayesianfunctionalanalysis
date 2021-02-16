@@ -35,7 +35,5 @@ We have tried to organise the code in a thoughtful way
 
 ## mathematical model
 
-## structure: code.... SI METTE OPPURE BASTANO I FOLDER?????? MAGARI UNO PSEUDOCODE?
-
 ## results: an overview
 Plots and spoiler BF
