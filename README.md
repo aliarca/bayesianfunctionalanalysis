@@ -5,7 +5,7 @@ To do so, we followed a Baeysian Functional Anova approach.
 
 
 ## required packages
-If you want to be sure of not missing anything, here there is a list of all the packages we have used
+If you don't want to miss anything, here there is a list of all the packages we have used
 ```r
 needed_packages  <- c("fda.usc","fda","fields","LaplacesDemon","matlab","mvtnorm", "Rmpfr", "LearnBayes")
 new_packages  <- needed_packages[!(needed_packages %in%installed.packages ()[, "Package"])]
