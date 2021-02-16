@@ -151,6 +151,9 @@ for (n_sign in 1:8){
   gib <- gibbs(niter, burnin, T, n, x_it, MU)
   sigma_2_result <- gib$sigma
   phi_result <- gib$phi
+  # initialization of the two parameters of sigma^2 distribution; 
+  a0 <- gib$a0
+  b0 <- gib$b0
   
   # # '- - - Normal - - -' ####
   # gib_norm <- gibbs(niter, burnin, T, a0, b0, c0, d0, n, x_it, MU_norm)
@@ -243,6 +246,9 @@ for (n_sign in 1:8){
   gib1 <- gibbs(niter, burnin, T, n1, x_it1, MU1)
   sigma_2_result1 <- gib1$sigma
   phi_result1 <- gib1$phi
+
+  a01 <- gib1$a0
+  b01 <- gib1$b0
   
   # # '- - - Normal - - -' ####
   # gib1_norm <- gibbs(niter, burnin, T, x_it1, MU1_norm)
@@ -327,6 +333,9 @@ for (n_sign in 1:8){
   gib2 <- gibbs(niter, burnin, T, n2, x_it2, MU2)
   sigma_2_result2 <- gib2$sigma
   phi_result2 <- gib2$phi
+  
+  a02 <- gib2$a0
+  b02 <- gib2$b0
   
   # # '- - - Normal - - -' ####
   # gib2_norm <- gibbs(niter, burnin, T, x_it2, MU2_norm)
