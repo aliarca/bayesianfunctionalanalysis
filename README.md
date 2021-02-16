@@ -1,6 +1,9 @@
-# bayesianproject
-Code and stuff from our project for Bayesian functional ANOVA
-
+# Bayesian functional analysis
+## Study of EEGs from brain responses in coma patients
+.
+.
+.
+.
 
 ## required packages
 If you want to be sure of not missing anything, here there is a list of all the packages we have used
