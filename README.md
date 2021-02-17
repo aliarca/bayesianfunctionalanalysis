@@ -36,7 +36,7 @@ We have tried to organise the code in a thoughtful way
   - **_niw.stan_**
   - **_cholesky.stan_**
   - **_gp.stan_**
-  - **_gp_chol.stan_**
+  - **_gp_cholesky.stan_**
 
 ## mathematical model
 The core of the model is the Bayes Factor computation. This because we are dealing with a hypothesis testing, with in the null hypothesis the fact that all the patients waves are equally distributes, and under the alternative they are separated according to the recovery
