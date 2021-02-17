@@ -21,7 +21,7 @@ We have tried to organise the code in a thoughtful way
   - **_Functional.R_** - where we worked on functional representation of the data
   - **_fPCA.R_** - some preprocessing work
   - **_graphics.R_**
-
+  - **_stan.R** an additional file with some tentatives of implementing a more complicated model
 - **samplers** contains:
   - **_niw.RData_**
   - **_nor.RData_**
@@ -31,6 +31,12 @@ We have tried to organise the code in a thoughtful way
   - **_calcolo.loglike.RData_** to computhe the likelihood of the data
   - **_bieffe.RData_** to compute the Bayes Factor
   - **_bieffe.power.RData_** to compute the BF with power likelihood
+- **stan** contains:
+  - **_precision.stan_**
+  - **_niw.stan_**
+  - **_cholesky.stan_**
+  - **_gp.stan_**
+  - **_gp_chol.stan_**
 
 ## mathematical model
 The core of the model is the Bayes Factor computation. This because we are dealing with a hypothesis testing, with in the null hypothesis the fact that all the patients waves are equally distributes, and under the alternative they are separated according to the recovery
