@@ -45,36 +45,36 @@ First of all, we are dealing with dense data, that can be treated as functional,
 
 Secondly we divide the curve in two components, a random mean term, and a random (zero mean) error
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model2.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model2.png" width="40%" height="40%">
 
 The first step is the sampling for the mean, according to the Bayesian approach. We represent it via suitable basis, to work with an equivalent but lighter model
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model3.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model3.png" width="15%" height="15%">
 
 So that we study a small dimensional Normal Inverse Wishart distribution, from which we can direcly sample
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model4.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model4.png" width="40%" height="40%">
 
 Then the error term, which we assume time independent
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model5.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model5.png" width="30%" height="30%">
 
 is studied and sampled through its hyperparameters (in this case we simulate from the two posteriors via Gibbs Sampling)
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model6.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model6.png" width="50%" height="50%">
 
 
 Finally we have to compute (via MC approximation) the likelihood
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model7.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model7.png" width="40%" height="40%">
 
 which we translate in logarithmic form, and also thanks to independece, it assumes the followin form
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model8.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model8.png" width="40%" height="40%">
 
 Ultimately, we computed the Bayes Factor, which will give us the final results
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model9.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model9.png" width="30%" height="30%">
 
 ## results: an overview
 In this overview, we want to take you along the discoveries we made, to finally lead you to the result.
@@ -84,11 +84,13 @@ First of all, a glimpe over a couple of the signals we studied
 <img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/gose1_5.png" width="50%" height="50%">
 <img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/gose2_5.png" width="50%" height="50%">
 
-* signal 4 (Fontal DX Short Latency) for all patients
+* signal 4 (Fontal DX Short Latency) for all patients, GOSE1 patiens and GOSE2 patients
 <img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/all_4.png" width="50%" height="50%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/gose1_4.png" width="50%" height="50%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/gose2_4.png" width="50%" height="50%">
 As you can see, some signals are more tidy than others, which insteas vary much more.
 
-As declared in the **mathematical model**, the BF is the tool that gives us the finale result, which is the statistical evidence in favour of the separated model vs the complete one. As you can see from this table, which actually reports a more robust version of the BF, obtained via a coarsened likelihood, **all the signals except the fourth** are evidently better explained by the "recovery model". As regards the fourth, we have no evidence in favour of one model nor the other, as one could qualitatevely guess from the plots above.
+As declared in the **mathematical model**, the BF is the tool that gives us the finale result, which is the statistical evidence in favour of the separated model vs the complete one. As you can see from this table, which actually reports a more robust version of the BF, obtained via a coarsened likelihood, **all the signals except the fourth** are evidently better explained by the "recovery model" (2*logBF >> 0). As regards the fourth, we have no evidence in favour of one model nor the other, as one could qualitatevely guess from the plots above.
 
 <img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/result.png" width="50%" height="50%">
 
