@@ -11,9 +11,10 @@ new_packages  <- needed_packages[!(needed_packages %in%installed.packages ()[, "
 if (length(new_packages))install.packages(new_packages)
 lapply(needed_packages , require , character.only = TRUE)
 ```
+## quick guide
+_To directly run the code, just go to the core.R file, it contains all the code that will patientely guide you to the final result. But if you are curious about the preprocessing, and you want to understand better our approach, you can have a detailed perspective by running Functional.R and fPCA.R before the main one. In those files we work on several functional representations of the EEG curves, and then we reduced the optimal representation obtained before thanks to functional PCA. In the end, for the bravest, the file stan.R contains the code for an upgraded, more complex and computationally demanding model._
 
 ## structure: folders and files
-We have tried to organise the code in a thoughtful way
 - **data** contains:
   - **_Codice_analisi_funzionale.RData_** the base of our work: the data!
 - **code** contains:
@@ -21,7 +22,7 @@ We have tried to organise the code in a thoughtful way
   - **_Functional.R_** - where we worked on functional representation of the data
   - **_fPCA.R_** - some preprocessing work
   - **_graphics.R_**
-  - **_stan.R** an additional file with some tentatives of implementing a more complicated model
+  - **_stan.R_** an additional file with some tentatives of implementing a more complicated model
 - **samplers** contains:
   - **_niw.RData_**
   - **_nor.RData_**
