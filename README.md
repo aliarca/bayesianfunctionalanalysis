@@ -34,7 +34,9 @@ We have tried to organise the code in a thoughtful way
 
 ## mathematical model
 Having in mind our goal, namely to test if the curves of patients with a good recovery are statistically different from the others, we build the following hypothesis test.
-\H_0
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model1.png" width="50%" height="50%">
+
+
 We assume our signals to be i.i.d samples from a 
 ## results: an overview
 In this overview, we want to take you along the discoveries we made, to finally lead you to the result.
@@ -44,6 +46,8 @@ First of all, a glimpe over a couple of the signals we studied
 * signal 4 (Fontal DX Short Latency) for all patients
 <img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/all_4.png" width="50%" height="50%">
 As you can see, some signals are more tidy than others, which insteas vary much more.
+
+As declared in the **mathematical model**, 
 
 
 
