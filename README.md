@@ -106,5 +106,4 @@ As declared in the **mathematical model**, the BF is the tool that gives us the 
 ## Acknowledgments
 
 * Bayesian Statistics course Professor Alessandra Guglielmi
-* Project supervisor Dr. Riccardo Corradin
-* Project tutor Dr. Mario Beraha
+* Project tutor Dr. Riccardo Corradin
