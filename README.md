@@ -1,6 +1,6 @@
 # Bayesian functional analysis
 ## Study of EEGs from brain responses in coma patients
-The aim of this project is to study the electrical brain waves of patients in a state of coma. In particular, an external electrical stimulus is applied to the patient and then the electrical brain response is recorded. These responses are here studied and then compared to the actual recovery of the patients, in order to verify whether there are significant differences in the curves of patients who had a good recovery and in the curves of patients with a bad recovery. 
+The aim of this project is to study the electrical brain waves of patients in a state of coma. In particular, an external electrical stimulus is applied to the patient and then the electrical brain response is recorded. These responses are here studied and then compared to the actual recovery of the patients, in order to verify whether there are significant differences in the curves of patients who had a good recovery (identified by the GOSE index equal to 2) and in the curves of patients with a bad recovery (GOSE equal to 1). 
 To do so, we followed a Baeysian Functional Anova approach.
 
 ## required packages
@@ -33,21 +33,64 @@ We have tried to organise the code in a thoughtful way
   - **_bieffe.power.RData_** to compute the BF with power likelihood
 
 ## mathematical model
-Having in mind our goal, namely to test if the curves of patients with a good recovery are statistically different from the others, we build the following hypothesis test.
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model1.png" width="50%" height="50%">
+The core of the model is the Bayes Factor computation. This because we are dealing with a hypothesis testing, with in the null hypothesis the fact that all the patients waves are equally distributes, and under the alternative they are separated according to the recovery
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/hyp.png" width="20%" height="20%">
+
+To do so, we need to compute the joint likelihood, so here it is the model for the curves, assumed independent among patiens
+
+First of all, we are dealing with dense data, that can be treated as functional, so instead of using a multivariate Gaussian model, we prefer a Gaussian Process.
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model1.png" width="20%" height="20%">
+
+Secondly we divide the curve in two components, a random mean term, and a random (zero mean) error
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model2.png" width="20%" height="20%">
+
+The first step is the sampling for the mean, according to the Bayesian approach. We represent it via suitable basis, to work with an equivalent but lighter model
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model3.png" width="20%" height="20%">
+
+So that we study a small dimensional Normal Inverse Wishart distribution, from which we can direcly sample
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model4.png" width="20%" height="20%">
+
+Then the error term, which we assume time independent
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model5.png" width="20%" height="20%">
+
+is studied and sampled through its hyperparameters (in this case we simulate from the two posteriors via Gibbs Sampling)
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model6.png" width="20%" height="20%">
 
 
-We assume our signals to be i.i.d samples from a 
+Finally we have to compute (via MC approximation) the likelihood
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model7.png" width="20%" height="20%">
+
+which we translate in logarithmic form, and also thanks to independece, it assumes the followin form
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model8.png" width="20%" height="20%">
+
+Ultimately, we computed the Bayes Factor, which will give us the final results
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/model9.png" width="20%" height="20%">
+
 ## results: an overview
 In this overview, we want to take you along the discoveries we made, to finally lead you to the result.
 First of all, a glimpe over a couple of the signals we studied
-* signal 5 (Central SX Medium Latency) for all patients
+* signal 5 (Central SX Medium Latency) for all patients, GOSE1 patiens and GOSE2 patients
 <img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/all_5.png" width="50%" height="50%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/gose1_5.png" width="50%" height="50%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/gose2_5.png" width="50%" height="50%">
+
 * signal 4 (Fontal DX Short Latency) for all patients
 <img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/all_4.png" width="50%" height="50%">
 As you can see, some signals are more tidy than others, which insteas vary much more.
 
-As declared in the **mathematical model**, 
+As declared in the **mathematical model**, the BF is the tool that gives us the finale result, which is the statistical evidence in favour of the separated model vs the complete one. As you can see from this table, which actually reports a more robust version of the BF, obtained via a coarsened likelihood, **all the signals except the fourth** are evidently better explained by the "recovery model". As regards the fourth, we have no evidence in favour of one model nor the other, as one could qualitatevely guess from the plots above.
+
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/result.png" width="50%" height="50%">
 
 
 
