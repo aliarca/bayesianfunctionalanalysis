@@ -41,7 +41,7 @@ We have tried to organise the code in a thoughtful way
 ## mathematical model
 The core of the model is the Bayes Factor computation. This because we are dealing with a hypothesis testing, with in the null hypothesis the fact that all the patients waves are equally distributes, and under the alternative they are separated according to the recovery
 
-<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/hyp.png" width="20%" height="20%">
+<img src="https://github.com/aliarca/bayesianfunctionalanalysis/blob/main/images/hyp.png" width="40%" height="40%">
 
 To do so, we need to compute the joint likelihood, so here it is the model for the curves, assumed independent among patiens
 
